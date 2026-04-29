@@ -2,7 +2,7 @@
 
 import { Plus, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 
 const accordionData = [
@@ -129,11 +129,62 @@ export default function Accordian() {
       }
     }
   }
+  const [numofQuestions, setNumOfQuestions] = useState(5)
+  const changeNum = (n: string) => {
+    if (n.length > 1 && n[0] == '0') {
+      n = n.slice(1)
+
+    }
+    const qusNumber = Number(n);
+    if (qusNumber > 50) {
+      alert('Number of questions must be 50 or less')
+    } else {
+      setNumOfQuestions(4)
+      setTimeout(() => {
+        setNumOfQuestions(qusNumber)
+
+      }, 0)
+
+    }
+  }
+  const refinput = useRef(null)
+  const focusoninput = () => {
+
+    if (refinput.current) {
+      const input = refinput.current as HTMLInputElement
+      input.type = 'text'
+
+      input.focus()
+      const length = input.value.length
+      input.setSelectionRange(length, length)
+      setTimeout(() => {
+        input.type = 'number'
+
+      }, 0)
+
+    }
+
+
+  }
   return (
     <div className={`border-t max-[570px]:mt-5 pt-2  relative`}>
       <div className={`absolute left-0 top-0 font-semibold p-2 w-40 flex justify-center tracking-wider max-[570px]:-translate-y-full bg-[#5D4037] text-white`}>{multiselecton == true ? 'Multi selction on' : 'Single selction on'}</div>
       {/* title */}
       <h3 className={`text-3xl font-bold text-center pb-3`}>Accordion</h3>
+
+      <div className={`py-4 px-5 flex max-[520px]:flex-col max-[520px]:gap-1 justify-between  `}>
+        <input
+          ref={refinput}
+          id={`num1`}
+          value={numofQuestions}
+          onWheel={(e) => e.currentTarget.blur()}
+
+          onChange={(e) => { changeNum(e.target.value) }} type="number"
+          className={`border-t max-[520px]:border max-[520px]:rounded-xl focus:border-t-2 peer focus:border-l-2 focus:border-b-2  border-b border-l rounded-[1000px__0_0_1000px]  px-3  border-[#3333338e] max-[520px]:flex-none  h-12 flex-1 outline-none  bg-white`} />
+        <div onClick={focusoninput} className={` cursor-pointer bottom-0 flex max-[520px]:justify-center peer-focus:border-r-2 peer-focus:border-b-2 peer-focus:border-t-2 items-center px-4 text-2xl top-0 right-0 peer max-[520px]:border max-[520px]:rounded-xl max-[520px]:h-12 bg-[#1B5E20]   peer text-white rounded-[0px__1000px_1000px_0px] shrink-0 border-r border-t border-b border-[#3333338e]`}>{numofQuestions} Questions of 50</div>
+
+
+      </div>
 
       <div onClick={() => { changemood() }} className={`bg-[#5D4037] text-white text-center px-4 py-1.5 font-semibold mx-auto cursor-pointer w-70 tracking-wider`}>{multiselecton == true ? ' Multi Selection on' : 'Sigle  Selection on'}</div>
 
@@ -141,6 +192,7 @@ export default function Accordian() {
 
         <div className={`flex flex-col  max-w-150 gap-3 w-full  py-4`}>
           {accordionData.map((item) => {
+            if (item.id > numofQuestions) { return }
             return (
               <div className={`p-4 text-white 	bg-[#5D4037] `} key={item.id}>
                 {/* question */}

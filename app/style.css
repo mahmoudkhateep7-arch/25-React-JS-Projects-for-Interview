@@ -1,3 +1,8 @@
 @import 'tailwindcss';
 
 /* tailwindcss */
+
+#num1::-webkit-inner-spin-button,
+#num1::-webkit-outer-spin-button {
+  appearance: none;
+}
