@@ -97,6 +97,7 @@ export default function Accordian() {
     setArr([...arr, objectId])
 
   }
+
   const changemood = () => {
 
     if (multiselecton == false) {
@@ -109,6 +110,23 @@ export default function Accordian() {
       setId(arr[arr.length - 1])
       setMutlitSelect(false)
 
+    }
+  }
+  const clickQuestion = (idd: number) => {
+    if (multiselecton == false) {
+      if (idd == id) {
+        setId(-5)
+      } else {
+        setId(idd)
+      }
+
+    } else {
+      if (arr.includes(idd)) {
+        const newarr = [...arr].filter((n) => { return n != idd })
+        setArr(newarr)
+      } else {
+        setArr([...arr, idd])
+      }
     }
   }
   return (
@@ -127,7 +145,7 @@ export default function Accordian() {
               <div className={`p-4 text-white 	bg-[#5D4037] `} key={item.id}>
                 {/* question */}
                 <div className={`flex font-bold  items-center w-full gap-5 justify-between`}>
-                  <h4>{item.question}</h4>
+                  <h4 onClick={() => { clickQuestion(item.id) }} className={` h-8 flex items-center cursor-pointer`}>{item.question}</h4>
                   <div className={`w-8 h-8 flex justify-center items-center`}>
                     <AnimatePresence mode={'wait'} initial={false} >
 
