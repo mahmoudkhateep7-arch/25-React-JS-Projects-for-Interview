@@ -8,6 +8,7 @@ import Accordian from "./accordian";
 import HexRgb from "./hexrgb";
 import Ratings from "./ratings";
 import Slider from "./slider";
+import LoadMore from "./loadmore";
 // an array here
 export default function Page() {
   const [index, setIndex] = useState(-2)
@@ -19,6 +20,7 @@ export default function Page() {
       <HexRgb></HexRgb>
       <Ratings></Ratings>
       <Slider></Slider>
+      <LoadMore></LoadMore>
 
     </div>
   )

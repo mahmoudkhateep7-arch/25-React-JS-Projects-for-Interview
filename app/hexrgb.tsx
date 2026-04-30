@@ -25,8 +25,6 @@ export default function HexRgb() {
   }
   const createHexCol = () => {
     const arrayofsixLetters = Array.from({ length: 6 }).map((n) => { return randomLetterGenerator() })
-    console.log((arrayofsixLetters.join(""))
-    )
 
     return `#${arrayofsixLetters.join("")}`
 

@@ -78,14 +78,15 @@ export default function Slider() {
     }, 3000)
 
     return () => { clearInterval(interval1) }
-  }, [index])
+  }, [index, arrayOfImages])
+
   if (arrayOfImages.length == 0) { return }
 
   return (
     <div className={`flex justify-center flex-col items-center py-10 px-8`}>
       <h3 className={`text-4xl font-bold pb-4`}>Slider</h3>
       {/*  wrapper*/}
-      <div className={` relative z-0 rounded-xl overflow-hidden  w-140 h-100`}>
+      <div className={` relative z-0 rounded-xl overflow-hidden w-full max-w-120 h-100`}>
 
         {/* left absoulte */}
         <div onClick={handleLeft} className={`absolute w-10 ${index == 0 ? 'opacity-20' : 'opacity-100'} h-10 bg-black cursor-pointer flex justify-center items-center top-1/2 left-3 rounded-full text-xl -translate-y-1/2 text-white `}><BiLeftArrow /></div>
