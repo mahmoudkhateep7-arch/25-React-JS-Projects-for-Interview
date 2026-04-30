@@ -17,9 +17,9 @@ export default function Ratings() {
   if (mounted == false) { return }
   return (
 
-    <div className={`py-8 relative`}>
-      <div onClick={() => { setYellowStars(0) }} className={`bg-black cursor-pointer bor border-white text-white absolute flex justify-center items-center px-4 py-1.5 text-xl top-0 left-0 max-[600px]:-translate-y-full`}>Reset Stars</div>
-      <h3 className={`text-center text-4xl pb-8 font-bold`}>Star Rating</h3>
+    <div className={`py-8 relative max-w-300 mx-auto `}>
+      <div onClick={() => { setYellowStars(0) }} className={`bg-black cursor-pointer bor border-white text-white absolute flex justify-center items-center px-4 py-1.5 text-xl top-10 left-10 max-[600px]:-translate-y-full`}>Reset Stars</div>
+      <h3 className={`text-center text-4xl pb-8  max-[800px]:pt-4 font-bold`}>Star Rating</h3>
       <div className={`flex  justify-center gap-2`}>
         {Array.from({ length: startsCount }).map((__, idx) => {
 

@@ -45,7 +45,7 @@ export default function LoadMore() {
 
   }
   return (
-    <div className="">
+    <div className=" max-w-350 mx-auto">
       <div className={`flex justify-center items-center text-center text-4xl py-8`}>Load More Producst</div>
       {/* products and loading grid container */}
       <div className="grid grid-cols-4 max-[1100px]:grid-cols-3 max-[950px]:grid-cols-2 max-[600px]:grid-cols-1 gap-y-5 gap-x-2 px-8  ">
@@ -54,7 +54,12 @@ export default function LoadMore() {
 
         {arrayOfThums.map((thumurl, idx) => {
           return (
-            <div key={idx} className={`border h-80 flex justify-center items-center`}>
+            <div key={idx} className={`border relative group h-80 flex justify-center items-center`}>
+              <div className={`absolute h-0.5 duration-150 transition-all  bg-black group-hover:w-full w-0 bottom-0 left-0`}></div>
+              <div className={`absolute h-0 group-hover:delay-150 duration-150 transition-all  bg-black group-hover:h-full w-0.5  bottom-0 right-0`}></div>
+              <div className={`absolute  group-hover:delay-300 duration-150 transition-all  bg-black   group-hover:w-full h-0.5  w-0 top-0 right-0`}></div>
+              <div className={`absolute  group-hover:delay-450 duration-150 transition-all  bg-black group-hover:h-full w-0.5 h-0 top-0 left-0`}></div>
+
               <Image
                 width={300}
                 height={300}

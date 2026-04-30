@@ -167,8 +167,7 @@ export default function Accordian() {
 
   }
   return (
-    <div className={`border-t max-[570px]:mt-5 pt-2  relative`}>
-      <div className={`absolute left-0 top-0 font-semibold p-2 w-40 flex justify-center tracking-wider max-[570px]:-translate-y-full bg-[#5D4037] text-white`}>{multiselecton == true ? 'Multi selction on' : 'Single selction on'}</div>
+    <div className={` max-[570px]:mt-5 pt-2 max-w-300 mx-auto  relative`}>
       {/* title */}
       <h3 className={`text-3xl font-bold text-center pb-3`}>Accordion</h3>
 

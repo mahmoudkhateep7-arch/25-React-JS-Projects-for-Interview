@@ -10,3 +10,12 @@
 img {
   user-select: none;
 }
+
+
+#loopborder {
+  animation: loopp 4s linear infinite;
+}
+
+@keyframes loopp {
+  from {}
+}
