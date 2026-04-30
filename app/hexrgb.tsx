@@ -69,10 +69,10 @@ export default function HexRgb() {
   return (
     <div style={{ background: col }} className={`py-6 `}>
       {/* 3 buttons  */}
-      <div className={`flex justify-center  gap-5`}>
-        <div onClick={() => { setnum(0) }} className={`${num == 0 ? 'bg-black text-white border-white scale-115 ' : 'bg-white text-black border-black'} border cursor-pointer text-xl px-3 py-1.5`}>Create Hex color</div>
-        <div onClick={() => { setnum(1) }} className={`${num == 1 ? 'bg-black text-white border-white scale-115' : 'bg-white text-black border-black'} border cursor-pointer text-xl px-3 py-1.5`}>Create Rgb color</div>
-        <div onClick={() => { sss(Math.random()) }} className={`border border-black hover:bg-black hover:text-white hover:border-white cursor-pointer duration-300 transition-all flex items-center px-4 text-xl bg-white text-black`}>new color</div>
+      <div className={`flex justify-center max-[600px]:flex-col   gap-5`}>
+        <div onClick={() => { setnum(0) }} className={`${num == 0 ? 'bg-black text-white border-white scale-115 ' : 'bg-white text-black border-black'} border cursor-pointer     max-[600px]:w-50 max-[600px]:mx-auto max-[600px]:text-center  text-xl px-3 py-1.5`}>Create Hex color</div>
+        <div onClick={() => { setnum(1) }} className={`${num == 1 ? 'bg-black text-white border-white scale-115' : 'bg-white text-black border-black'} border cursor-pointer      max-[600px]:w-50 max-[600px]:mx-auto max-[600px]:text-center   text-xl px-3 py-1.5`}>Create Rgb color</div>
+        <div onClick={() => { sss(Math.random()) }} className={`border border-black hover:bg-black hover:text-white hover:border-white cursor-pointer duration-300 transition-all max-[600px]:w-50 max-[600px]:mx-auto max-[600px]:text-center  max-[600px]:justify-center    flex items-center px-4 text-xl bg-white text-black`}>new color</div>
       </div>
 
       <div className={`text-4xl font-bold text-center  py-20`}>{num == 0 ? 'HEX Color' : 'RGB color'}</div>
