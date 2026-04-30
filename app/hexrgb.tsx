@@ -67,7 +67,7 @@ export default function HexRgb() {
   }, [])
   if (mounted == false) { return }
   return (
-    <div style={{ background: col }} className={`py-6 `}>
+    <div style={{ background: col }} className={`pt-6 pb-14 `}>
       {/* 3 buttons  */}
       <div className={`flex justify-center max-[600px]:flex-col   gap-5`}>
         <div onClick={() => { setnum(0) }} className={`${num == 0 ? 'bg-black text-white border-white scale-115 ' : 'bg-white text-black border-black'} border cursor-pointer     max-[600px]:w-50 max-[600px]:mx-auto max-[600px]:text-center  text-xl px-3 py-1.5`}>Create Hex color</div>
@@ -82,7 +82,6 @@ export default function HexRgb() {
         <p className={`text-white text-center text-7xl max-[1200px]:text-5xl max-[800px]:text-4xl max-[600px]:text-2xl`}>{col}</p>
       </div>
 
-      <div></div>
     </div>
   )
 }

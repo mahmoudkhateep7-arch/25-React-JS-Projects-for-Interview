@@ -6,3 +6,7 @@
 #num1::-webkit-outer-spin-button {
   appearance: none;
 }
+
+img {
+  user-select: none;
+}
