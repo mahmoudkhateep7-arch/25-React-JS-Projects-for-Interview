@@ -6,6 +6,7 @@ import TopHeadr from "./topheader";
 import Title from "./title";
 import Accordian from "./accordian";
 import HexRgb from "./hexrgb";
+import Ratings from "./ratings";
 // an array here
 export default function Page() {
   const [index, setIndex] = useState(-2)
@@ -15,6 +16,7 @@ export default function Page() {
       <Title></Title>
       <Accordian></Accordian>
       <HexRgb></HexRgb>
+      <Ratings></Ratings>
 
     </div>
   )

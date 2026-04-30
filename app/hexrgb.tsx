@@ -1,14 +1,23 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 const str = '123456789abcdef'
 const twocol = ['rgb(123,123,123)', '#414231']
 export default function HexRgb() {
   const [aa, staa] = useState(1)
   const [ss, sss] = useState(1)
+  const [num, setnum] = useState(3)
 
-  const [num, setnum] = useState(Math.floor(Math.random() * 2))
-  const [col, setCol] = useState(num == 0 ? twocol[1] : twocol[0])
+  const [col, setCol] = useState('wh')
+
+  const [mounted, setmounted] = useState(false);
+  useEffect(() => {
+    setnum(Math.floor(Math.random() * 2))
+    setCol(num == 0 ? twocol[1] : twocol[0])
+
+
+    setmounted(true)
+  }, [])
   const randomLetterGenerator = () => {
     const randomIndex = Math.floor(Math.random() * str.length)
     const randomLetter = str[randomIndex]
@@ -56,6 +65,7 @@ export default function HexRgb() {
       staa(2)
     }, 0);
   }, [])
+  if (mounted == false) { return }
   return (
     <div style={{ background: col }} className={`py-6 `}>
       {/* 3 buttons  */}
