@@ -117,13 +117,13 @@ const RenderOneWholeObject = ({ item }: { item: objShape }) => {
 
           <>
             {item.children ?
-              <Plus size={30} /> : ''}
+              <Plus className={`cursor-pointer`} size={30} /> : ''}
 
           </>
           :
           <>
             {item.children ?
-              <Minus size={35} /> : ''}
+              <Minus className={`cursor-pointer`} size={35} /> : ''}
 
           </>
 
