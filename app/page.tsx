@@ -13,13 +13,13 @@ import TreeNode from "./treeview";
 export default function Page() {
   return (
     <div className={`min-h-screen bg-white`}>
-      {/* <TopHeadr></TopHeadr> */}
-      {/* <Title></Title> */}
-      {/* <Accordian></Accordian> */}
-      {/* <HexRgb></HexRgb> */}
-      {/* <Ratings></Ratings> */}
-      {/* <Slider></Slider> */}
-      {/* <LoadMore></LoadMore> */}
+      <TopHeadr></TopHeadr>
+      <Title></Title>
+      <Accordian></Accordian>
+      <HexRgb></HexRgb>
+      <Ratings></Ratings>
+      <Slider></Slider>
+      <LoadMore></LoadMore>
       <TreeNode></TreeNode>
 
     </div>
