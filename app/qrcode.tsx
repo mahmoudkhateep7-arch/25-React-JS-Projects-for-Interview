@@ -19,8 +19,8 @@ export default function QrCode() {
 
         <button onClick={hanclick} className={`bg-black ${inVal.trim().length == 0 ? 'bg-gray-600 opacity-25' : 'bg-black opacity-100'} cursor-pointer py-1.5 px-3 text-2xl border-l max-[500px]:border-none `}>GeneRate</button>
       </div>
-      <div className={`bg-amber-200 flex justify-center py-4`}>
-        <QRCode value={kemo} className={`w-60 max-[1000px]:w-40 max-[700px]:w-30 h-fit bg-amber-500 `}></QRCode>
+      <div className={` flex justify-center py-4`}>
+        <QRCode value={kemo} className={`w-60 max-[1000px]:w-40 max-[700px]:w-30 h-fit  `}></QRCode>
 
       </div>
     </section>

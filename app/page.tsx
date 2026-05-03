@@ -12,6 +12,7 @@ import LoadMore from "./loadmore";
 import TreeNode from "./treeview";
 import QrCode from "./qrcode";
 import DardLightMode from "./switchMode";
+import GettingDummyData from "./gettingdummydata";
 export default function Page() {
   return (
     <div className={`min-h-screen bg-white`}>
@@ -25,6 +26,8 @@ export default function Page() {
       <TreeNode></TreeNode>
       <QrCode />
       < DardLightMode></DardLightMode>
+
+      <GettingDummyData></GettingDummyData>
     </div>
   )
 }
