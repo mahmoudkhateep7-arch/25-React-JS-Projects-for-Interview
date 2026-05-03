@@ -10,6 +10,8 @@ import Ratings from "./ratings";
 import Slider from "./slider";
 import LoadMore from "./loadmore";
 import TreeNode from "./treeview";
+import QrCode from "./qrcode";
+import DardLightMode from "./switchMode";
 export default function Page() {
   return (
     <div className={`min-h-screen bg-white`}>
@@ -21,7 +23,8 @@ export default function Page() {
       <Slider></Slider>
       <LoadMore></LoadMore>
       <TreeNode></TreeNode>
-
+      <QrCode />
+      < DardLightMode></DardLightMode>
     </div>
   )
 }
