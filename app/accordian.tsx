@@ -3,6 +3,7 @@
 import { Plus, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useRef, useState } from "react";
+import PopOut from "./popout";
 
 
 const accordionData = [
@@ -130,6 +131,7 @@ export default function Accordian() {
     }
   }
   const [numofQuestions, setNumOfQuestions] = useState(5)
+  const [showPopup, setShoePopup] = useState(false)
   const changeNum = (n: string) => {
     if (n.length > 1 && n[0] == '0') {
       n = n.slice(1)
@@ -137,8 +139,11 @@ export default function Accordian() {
     }
     const qusNumber = Number(n);
     if (qusNumber > 50) {
-      alert('Number of questions must be 50 or less')
-    } else {
+      setShoePopup(true)
+
+    }
+    else if (qusNumber == 0) { setNumOfQuestions(1) }
+    else {
       setNumOfQuestions(4)
       setTimeout(() => {
         setNumOfQuestions(qusNumber)
@@ -167,69 +172,75 @@ export default function Accordian() {
 
   }
   return (
-    <div className={` max-[570px]:mt-5 pt-2 max-w-300 mx-auto  relative`}>
-      {/* title */}
-      <h3 className={`text-3xl font-bold text-center pb-3`}>Accordion</h3>
+    <>
+      {showPopup &&
+        <PopOut IsOpen={showPopup} setIsOpen={setShoePopup} />
+      }
+      <div className={` max-[570px]:mt-5 pt-2 max-w-300 mx-auto  relative`}>
+        {/* title */}
+        <h3 className={`text-3xl font-bold text-center pb-3`}>Accordion</h3>
 
-      <div className={`py-4 px-5 flex max-[520px]:flex-col max-[520px]:gap-1 justify-between  `}>
-        <input
-          ref={refinput}
-          id={`num1`}
-          value={numofQuestions}
-          onWheel={(e) => e.currentTarget.blur()}
+        <div className={`py-4 px-5 flex max-[520px]:flex-col max-[520px]:gap-1 justify-between  `}>
+          <input
+            ref={refinput}
+            id={`num1`}
+            value={numofQuestions}
+            onWheel={(e) => e.currentTarget.blur()}
 
-          onChange={(e) => { changeNum(e.target.value) }} type="number"
-          className={`border-t max-[520px]:border max-[520px]:rounded-xl focus:border-t-2 peer focus:border-l-2 focus:border-b-2  border-b border-l rounded-[1000px__0_0_1000px]  px-3  border-[#3333338e] max-[520px]:flex-none  h-12 flex-1 outline-none  bg-white`} />
-        <div onClick={focusoninput} className={` cursor-pointer bottom-0 flex max-[520px]:justify-center peer-focus:border-r-2 peer-focus:border-b-2 peer-focus:border-t-2 items-center px-4 text-2xl top-0 right-0 peer max-[520px]:border max-[520px]:rounded-xl max-[520px]:h-12 bg-[#1B5E20]   peer text-white rounded-[0px__1000px_1000px_0px] shrink-0 border-r border-t border-b border-[#3333338e]`}>{numofQuestions} Questions of 50</div>
+            onChange={(e) => { changeNum(e.target.value) }} type="number"
+            className={`border-t max-[520px]:border max-[520px]:rounded-xl focus:border-t-2 peer focus:border-l-2 focus:border-b-2  border-b border-l rounded-[1000px__0_0_1000px]  px-3  border-[#3333338e] max-[520px]:flex-none  h-12 flex-1 outline-none  bg-white`} />
+          <div onClick={focusoninput} className={` cursor-pointer bottom-0 flex max-[520px]:justify-center peer-focus:border-r-2 peer-focus:border-b-2 peer-focus:border-t-2 items-center px-4 text-2xl top-0 right-0 peer max-[520px]:border max-[520px]:rounded-xl max-[520px]:h-12 bg-[#1B5E20]   peer text-white rounded-[0px__1000px_1000px_0px] shrink-0 border-r border-t border-b border-[#3333338e]`}>{numofQuestions} Questions of 50</div>
 
 
-      </div>
+        </div>
 
-      <div onClick={() => { changemood() }} className={`bg-[#5D4037] text-white text-center px-4 py-1.5 font-semibold mx-auto cursor-pointer w-70 tracking-wider`}>{multiselecton == true ? ' Multi Selection on' : 'Sigle  Selection on'}</div>
+        <div onClick={() => { changemood() }} className={`bg-[#5D4037] text-white text-center px-4 py-1.5 font-semibold mx-auto cursor-pointer w-70 tracking-wider`}>{multiselecton == true ? ' Multi Selection on' : 'Sigle  Selection on'}</div>
 
-      <div className={` flex px-4 py-5 flex-col items-center`}>
+        <div className={` flex px-4 py-5 flex-col items-center`}>
 
-        <div className={`flex flex-col  max-w-150 gap-3 w-full  py-4`}>
-          {accordionData.map((item) => {
-            if (item.id > numofQuestions) { return }
-            return (
-              <div className={`p-4 text-white 	bg-[#5D4037] `} key={item.id}>
-                {/* question */}
-                <div className={`flex font-bold  items-center w-full gap-5 justify-between`}>
-                  <h4 onClick={() => { clickQuestion(item.id) }} className={` h-8 flex items-center cursor-pointer`}>{item.question}</h4>
-                  <div className={`w-8 h-8 flex justify-center items-center`}>
-                    <AnimatePresence mode={'wait'} initial={false} >
+          <div className={`flex flex-col  max-w-150 gap-3 w-full  py-4`}>
+            {accordionData.map((item, idx) => {
+              if (item.id > numofQuestions) { return }
+              return (
+                <div style={{ top: `${idx * 7}px` }} className={`p-4 text-white sticky z-10	bg-[#5D4037] `} key={item.id}>
+                  {/* question */}
+                  <div className={`flex font-bold  items-center w-full gap-5 justify-between`}>
+                    <h4 onClick={() => { clickQuestion(item.id) }} className={` h-8 flex items-center cursor-pointer`}>{item.question}</h4>
+                    <div className={`w-8 h-8 flex justify-center items-center`}>
+                      <AnimatePresence mode={'wait'} initial={false} >
 
-                      {showItem(item.id) ?
-                        <motion.div className={`cursor-pointer`} key={'iconx'} initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: .3 / 2 }} onClick={() => { clickx(item.id) }}><X /> </motion.div> :
-                        <motion.div className={`cursor-pointer`} key={'iconplus'} initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: .3 / 2 }} onClick={() => { clickPlus(item.id) }}><Plus /></motion.div>}
-                    </AnimatePresence>
+                        {showItem(item.id) ?
+                          <motion.div className={`cursor-pointer`} key={'iconx'} initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: .3 / 2 }} onClick={() => { clickx(item.id) }}><X /> </motion.div> :
+                          <motion.div className={`cursor-pointer`} key={'iconplus'} initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: .3 / 2 }} onClick={() => { clickPlus(item.id) }}><Plus /></motion.div>}
+                      </AnimatePresence>
+                    </div>
+
                   </div>
 
+
+                  <AnimatePresence>
+                    {showItem(item.id) &&
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: .3 }}
+
+                        className={`overflow-hidden  flex flex-col`}>
+                        <span className={`h-5 w-full `}></span>
+                        <p className={``}>{item.answer}</p>
+                      </motion.div>
+                    }
+                  </AnimatePresence>
+
+
                 </div>
-
-
-                <AnimatePresence>
-                  {showItem(item.id) &&
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: .3 }}
-
-                      className={`overflow-hidden  flex flex-col`}>
-                      <span className={`h-5 w-full `}></span>
-                      <p className={``}>{item.answer}</p>
-                    </motion.div>
-                  }
-                </AnimatePresence>
-
-
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </div>
-    </div>
+
+    </>
   )
 }
