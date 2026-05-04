@@ -14,6 +14,7 @@ import QrCode from "./qrcode";
 import DardLightMode from "./switchMode";
 import GettingDummyData from "./gettingdummydata";
 import Tabs from "./tabs";
+import GithubFinder from "@/gitHubFinder";
 export default function Page() {
   return (
     <div className={`min-h-screen bg-white`}>
@@ -35,6 +36,7 @@ export default function Page() {
 
       <Tabs></Tabs>
 
+      <GithubFinder></GithubFinder>
     </div>
   )
 }

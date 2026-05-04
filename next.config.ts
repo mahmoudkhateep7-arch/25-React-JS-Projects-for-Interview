@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'picsum.photos' },
       { protocol: 'https', hostname: 'unsplash.com' },
       { protocol: 'https', hostname: 'cdn.dummyjson.com' },
+      { protocol: 'https', hostname: 'avatars.githubusercontent.com' },
 
 
     ]
