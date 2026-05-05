@@ -19,7 +19,7 @@ import SearchFilter from "./searchFilter";
 export default function Page() {
   return (
     <div className={`min-h-screen bg-white`}>
-      {/* <TopHeadr></TopHeadr>
+      <TopHeadr></TopHeadr>
       <Title></Title>
       <Accordian></Accordian>
       <HexRgb></HexRgb>
@@ -30,14 +30,14 @@ export default function Page() {
       <QrCode />
       < DardLightMode></DardLightMode>
 
-      <GettingDummyData></GettingDummyData> */}
+      <GettingDummyData></GettingDummyData>
 
 
 
 
-      {/* <Tabs></Tabs>
+      <Tabs></Tabs>
 
-      <GithubFinder></GithubFinder> */}
+      <GithubFinder></GithubFinder>
 
       <SearchFilter></SearchFilter>
     </div>
