@@ -16,30 +16,25 @@ import GettingDummyData from "./gettingdummydata";
 import Tabs from "./tabs";
 import GithubFinder from "@/gitHubFinder";
 import SearchFilter from "./searchFilter";
+import TicTac from "./tictak";
 export default function Page() {
   return (
     <div className={`min-h-screen bg-white`}>
-      <TopHeadr></TopHeadr>
-      <Title></Title>
-      <Accordian></Accordian>
-      <HexRgb></HexRgb>
-      <Ratings></Ratings>
-      <Slider></Slider>
-      <LoadMore></LoadMore>
-      <TreeNode></TreeNode>
-      <QrCode />
-      < DardLightMode></DardLightMode>
-
-      <GettingDummyData></GettingDummyData>
-
-
-
-
-      <Tabs></Tabs>
-
-      <GithubFinder></GithubFinder>
-
-      <SearchFilter></SearchFilter>
+        <TopHeadr></TopHeadr>
+        <Title></Title>
+        <Accordian></Accordian>
+        <HexRgb></HexRgb>
+        <Ratings></Ratings>
+        <Slider></Slider>
+        <LoadMore></LoadMore>
+        <TreeNode></TreeNode>
+        <QrCode />
+        < DardLightMode></DardLightMode>
+        <GettingDummyData></GettingDummyData>
+        <Tabs></Tabs>
+        <GithubFinder></GithubFinder>
+        <SearchFilter></SearchFilter>
+      <TicTac></TicTac>
     </div>
   )
 }

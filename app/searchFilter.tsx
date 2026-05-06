@@ -62,7 +62,7 @@ export default function FilterSearch() {
       {/* span for num of results */}
     <div className={`relative bg-amber-50 max-[800px]:pt-5`}>
         <div className={`max-w-200 w-full z-0 text-white  bg-[#595858c4] p-1 sm:p-4 md:p-6 h-40 sm:h-55 md:h-60 lg:h-80 overflow-auto  mx-auto flex flex-col md:gap-5  gap-3`}>
-        <div className={`sticky top-0`} ><input onChange={handleInputChange} value={inputValue} className={`border md:text-2xl px-4 py-1.5 w-full bg-black text-white`} type="text" placeholder={'Enter a name'} /></div>
+        <div className={`sticky top-0`} ><input autoFocus onChange={handleInputChange} value={inputValue} className={`border md:text-2xl px-4 py-1.5 w-full bg-black text-white`} type="text" placeholder={'Enter a name'} /></div>
         {inputValue.length == 0 && <span className={`text-2xl tracking-wide  flex justify-center`}>Start Typing Now</span>}
 
         {filteredNames.length > 0 && <>
