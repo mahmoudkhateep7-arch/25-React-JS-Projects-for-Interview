@@ -56,7 +56,26 @@ export default function Tabs() {
     <section className={`overflow-hidden py-10`}>
 
 
+      <div className={`flex text-2xl px-4 gap-1 max-[900px]:grid-cols-2 max-[600px]:text-sm max-[470px]:grid-cols-1 max-[1600px]:text-xl max-[1400px]:grid max-[1400px]:grid-cols-3 justify-center py-3`}>
+        {arr.map((item, idx) => {
+          return (
+            <div
+              onClick={() => { setRandomIndex(idx) }}
+              className=
+              {`px-4 py-1.5 duration-500 transition-all cursor-pointer  ${randomIndex == idx ? 'bg-black text-white relative  scale-105 z-4 min-[1600px]:scale-110' : 'bg-white border'}`}
+              key={idx}>{item.title}</div>
+          )
+        })}
+      </div>
+      <div key={randomIndex} className={`pt-5 overflow-hidden px-8 transition-all duration-1000  items-center text-xl`}>
 
+        <div data-aos='slide-left' key={randomIndex} className={`  max-w-200 mx-auto`} >
+          <h4 className={`transition-all duration-1000 text-2xl font-semibold`}> {arr[randomIndex].author}</h4>
+          <p className={`max-[600px]:text-sm pt-2`}>{arr[randomIndex].para}</p>
+        </div>
+
+      </div>
+      
     </section>
   )
 }
