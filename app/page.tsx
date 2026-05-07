@@ -20,39 +20,42 @@ import TicTac from "./tictak";
 import FeatureFlag from "./featureFlage";
 import { useSelector } from "react-redux";
 import { AppState } from "./redux";
+import Test from "./useHook";
 export default function Page() {
-  const {showAccoridan,showRandomColor,showTicTac,showTreeView,showlightDarkMode}
-  =useSelector((state:AppState)=>{return state.showComponentsSlice})
+  const { showAccoridan, showRandomColor, showTicTac, showTreeView, showlightDarkMode }
+    = useSelector((state: AppState) => { return state.showComponentsSlice })
   return (
     <div className={`min-h-screen bg-white`}>
-        <TopHeadr></TopHeadr>
-        <Title></Title>
-        {showAccoridan&&
+      <TopHeadr></TopHeadr>
+      <Title></Title>
+      {showAccoridan &&
         <Accordian></Accordian>
-        
-        }
-        {showRandomColor&&
+
+      }
+      {showRandomColor &&
         <HexRgb></HexRgb>
-        
-        }
-        <Ratings></Ratings>
-        <Slider></Slider>
-        <LoadMore></LoadMore>
-        {showTreeView&&
+
+      }
+      <Ratings></Ratings>
+      <Slider></Slider>
+      <LoadMore></LoadMore>
+      {showTreeView &&
         <TreeNode></TreeNode>
-        }
-        <QrCode />
-        {showlightDarkMode&&
+      }
+      <QrCode />
+      {showlightDarkMode &&
         < DardLightMode></DardLightMode>
-        }
-        <GettingDummyData></GettingDummyData>
-        <Tabs></Tabs>
-        <GithubFinder></GithubFinder>
-        <SearchFilter></SearchFilter>
-        {showTicTac&&
-      <TicTac></TicTac>
-        }
+      }
+      <GettingDummyData></GettingDummyData>
+      <Tabs></Tabs>
+      <GithubFinder></GithubFinder>
+      <SearchFilter></SearchFilter>
+      {showTicTac &&
+        <TicTac></TicTac>
+      }
       <FeatureFlag></FeatureFlag>
+      <Test></Test>
+
     </div>
   )
 }
