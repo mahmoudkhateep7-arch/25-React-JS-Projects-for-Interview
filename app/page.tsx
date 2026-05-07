@@ -17,24 +17,42 @@ import Tabs from "./tabs";
 import GithubFinder from "@/gitHubFinder";
 import SearchFilter from "./searchFilter";
 import TicTac from "./tictak";
+import FeatureFlag from "./featureFlage";
+import { useSelector } from "react-redux";
+import { AppState } from "./redux";
 export default function Page() {
+  const {showAccoridan,showRandomColor,showTicTac,showTreeView,showlightDarkMode}
+  =useSelector((state:AppState)=>{return state.showComponentsSlice})
   return (
     <div className={`min-h-screen bg-white`}>
         <TopHeadr></TopHeadr>
         <Title></Title>
+        {showAccoridan&&
         <Accordian></Accordian>
+        
+        }
+        {showRandomColor&&
         <HexRgb></HexRgb>
+        
+        }
         <Ratings></Ratings>
         <Slider></Slider>
         <LoadMore></LoadMore>
+        {showTreeView&&
         <TreeNode></TreeNode>
+        }
         <QrCode />
+        {showlightDarkMode&&
         < DardLightMode></DardLightMode>
+        }
         <GettingDummyData></GettingDummyData>
         <Tabs></Tabs>
         <GithubFinder></GithubFinder>
         <SearchFilter></SearchFilter>
+        {showTicTac&&
       <TicTac></TicTac>
+        }
+      <FeatureFlag></FeatureFlag>
     </div>
   )
 }
