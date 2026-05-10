@@ -58,7 +58,7 @@ export default function GithubFinder() {
     <section className={`py-10`}>
       {/* search input and button */}
       <div className={`flex bg-black text-white p-4 justify-center`}>
-        <input autoFocus onChange={handleOnechane} value={inputVal} className={`flex-1 border-l border-t max-w-100 border-b px-4 py-2 outline-none`} placeholder={'Enter a name'} type="text" />
+        <input onChange={handleOnechane} value={inputVal} className={`flex-1 border-l border-t max-w-100 border-b px-4 py-2 outline-none`} placeholder={'Enter a name'} type="text" />
         <span onClick={getNewData} className={'border-t bg-white text-black text-2xl border-b border-r border-l border-white cursor-pointer justify-center  px-2 py-2 flex items-center'}>Search</span>
       </div>
       <h5 className={`h-10`}></h5>
