@@ -4,7 +4,9 @@ import { useEffect, useRef, useState } from "react"
 interface ObjShape {
   firstName: string, lastName: string
 }
-const useHook = (ure: string, n: number) => {
+
+const useHook = (ure: string, n: number,) => {
+
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState<[] | ObjShape[]>([])
   const getData = async () => {
@@ -15,6 +17,7 @@ const useHook = (ure: string, n: number) => {
         setLoading(false)
         setData([{ firstName: 'some', lastName: 'err' }])
         return
+
 
       }
       const resData = await res.json()
@@ -35,7 +38,7 @@ const useHook = (ure: string, n: number) => {
     setTimeout(() => {
       getData()
 
-    }, 3000);
+    }, 300);
   }, [n])
 
   return { loading, data, setLoading, setData }
@@ -44,6 +47,8 @@ const useHook = (ure: string, n: number) => {
 const url = 'https://dummyjson.com/users'
 export default function Test() {
   const [n, setN] = useState(2)
+
+
   const { data, loading } = useHook(url, n)
   const boxRef = useRef(null)
   useEffect(() => {
@@ -59,7 +64,7 @@ export default function Test() {
 
   }, [])
   return (
-    <div ref={boxRef} className={`flex justify-center items-center min-h-screen`}>
+    <div ref={boxRef} className={`flex  w-fit mx-auto justify-center items-center min-h-screen`}>
       {loading && <h2 className={`animate-spin`}><Loader2Icon /></h2>}
       {loading == false && <div className={`flex flex-col items-center gap-2 p-4`}>
         {data.map((obj, idx) => {
@@ -71,3 +76,6 @@ export default function Test() {
     </div>
   )
 }
+
+
+

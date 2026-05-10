@@ -21,12 +21,14 @@ import FeatureFlag from "./featureFlage";
 import { useSelector } from "react-redux";
 import { AppState } from "./redux";
 import Test from "./useHook";
+import Clickoutide from "./ClickOutsied";
+import Resize from "./useresize";
 export default function Page() {
   const { showAccoridan, showRandomColor, showTicTac, showTreeView, showlightDarkMode }
     = useSelector((state: AppState) => { return state.showComponentsSlice })
   return (
     <div className={`min-h-screen bg-white`}>
-      <TopHeadr></TopHeadr>
+      {/* <TopHeadr></TopHeadr>
       <Title></Title>
       {showAccoridan &&
         <Accordian></Accordian>
@@ -54,7 +56,12 @@ export default function Page() {
         <TicTac></TicTac>
       }
       <FeatureFlag></FeatureFlag>
-      <Test></Test>
+       */}
+      {/*  */}
+      {/* <Test></Test> */}
+      {/* <Clickoutide></Clickoutide> */}
+      {/* <Test></Test> */}
+      {/* <Resize></Resize> */}
 
     </div>
   )
