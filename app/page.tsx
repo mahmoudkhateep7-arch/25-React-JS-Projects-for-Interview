@@ -24,48 +24,34 @@ import Test from "./useHook";
 import Clickoutide from "./ClickOutsied";
 import Resize from "./useresize";
 import ScrollUpandDown from "./scrollupanddown";
+import SectionsScroll from "./sectionsscroll";
 export default function Page() {
   const { showAccoridan, showRandomColor, showTicTac, showTreeView, showlightDarkMode }
     = useSelector((state: AppState) => { return state.showComponentsSlice })
   return (
     <div className={`min-h-screen bg-white`}>
-      {/* <TopHeadr></TopHeadr>
-      <Title></Title>
-      {showAccoridan &&
-        <Accordian></Accordian>
-
-      }
-      {showRandomColor &&
-        <HexRgb></HexRgb>
-
-      }
-      <Ratings></Ratings>
-      <Slider></Slider>
-      <LoadMore></LoadMore>
-      {showTreeView &&
-        <TreeNode></TreeNode>
-      }
-      <QrCode />
-      {showlightDarkMode &&
-        < DardLightMode></DardLightMode>
-      }
-      <GettingDummyData></GettingDummyData>
-      <Tabs></Tabs>
-      <GithubFinder></GithubFinder>
-      <SearchFilter></SearchFilter>
-      {showTicTac &&
-        <TicTac></TicTac>
-      }
-      <FeatureFlag></FeatureFlag>
-       */}
-      {/*  */}
+      {/* <TopHeadr></TopHeadr> */}
+      {/* <Title></Title> */}
+      {/* {showAccoridan &&<Accordian></Accordian>} */}
+      {/* {showRandomColor &&<HexRgb></HexRgb>} */}
+      {/* <Ratings></Ratings> */}
+      {/* <Slider></Slider> */}
+      {/* <LoadMore></LoadMore> */}
+      {/* {showTreeView &&<TreeNode></TreeNode>} */}
+      {/* <QrCode /> */}
+      {/* {showlightDarkMode &&< DardLightMode></DardLightMode>} */}
+      {/* <GettingDummyData></GettingDummyData> */}
+      {/* <Tabs></Tabs> */}
+      {/* <GithubFinder></GithubFinder> */}
+      {/* <SearchFilter></SearchFilter> */}
+      {/* {showTicTac &&<TicTac></TicTac>} */}
+      {/* <FeatureFlag></FeatureFlag> */}
       {/* <Test></Test> */}
       {/* <Clickoutide></Clickoutide> */}
       {/* <Test></Test> */}
       {/* <Resize></Resize> */}
-
-
-      <ScrollUpandDown></ScrollUpandDown>
+      {/* <ScrollUpandDown></ScrollUpandDown> */}
+      {/* <SectionsScroll></SectionsScroll> */}
 
 
     </div>

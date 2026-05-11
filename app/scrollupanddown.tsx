@@ -6,8 +6,17 @@ const Helper1 = ({ textString, btnString, tergetRef }: { tergetRef: React.RefObj
   const toTarget = () => {
     if (tergetRef.current) {
       const targetEl = tergetRef.current;
+      let a = 10;
+      if (window.innerWidth > 1000) {
+        a = 150
+      } else if (window.innerWidth > 700) {
+        a = 250
+      } else {
+        a = 150
+      }
       window.scrollTo({
-        top: targetEl.offsetTop - 100,
+
+        top: targetEl.offsetTop - a,
         behavior: 'smooth'
 
       })
