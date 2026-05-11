@@ -23,6 +23,7 @@ import { AppState } from "./redux";
 import Test from "./useHook";
 import Clickoutide from "./ClickOutsied";
 import Resize from "./useresize";
+import ScrollUpandDown from "./scrollupanddown";
 export default function Page() {
   const { showAccoridan, showRandomColor, showTicTac, showTreeView, showlightDarkMode }
     = useSelector((state: AppState) => { return state.showComponentsSlice })
@@ -62,6 +63,10 @@ export default function Page() {
       {/* <Clickoutide></Clickoutide> */}
       {/* <Test></Test> */}
       {/* <Resize></Resize> */}
+
+
+      <ScrollUpandDown></ScrollUpandDown>
+
 
     </div>
   )
