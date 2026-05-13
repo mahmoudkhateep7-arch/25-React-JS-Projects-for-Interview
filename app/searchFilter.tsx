@@ -16,7 +16,6 @@ export default function FilterSearch() {
       const res = await fetch('https://dummyjson.com/users')
       const dataObj = await res.json()
       const arrayOfUsers: { firstName: string, lastName: string, madinName: string }[] = (dataObj.users)
-      console.log(arrayOfUsers)
       const stringArray = arrayOfUsers.map((objItem) => { return `${objItem.firstName} ${objItem.lastName}` })
       // const stringArray=dataObj.users.map((objItem))
       setNames(stringArray)

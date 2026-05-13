@@ -16,13 +16,10 @@ const showComponentsSlice = createSlice({
   initialState: initalState,
   reducers: {
     fillState: (state, action) => {
-      console.log(action.payload)
       return action.payload
     },
     updateObj: (state, action: { payload: keyof ObjResShape }) => {
       const key = action.payload
-      console.log(key)
-      console.log(!(state[key]))
 
       state[key] = !(state[key])
       state.newProp = !(state.newProp)

@@ -25,6 +25,7 @@ import Clickoutide from "./ClickOutsied";
 import Resize from "./useresize";
 import ScrollUpandDown from "./scrollupanddown";
 import SectionsScroll from "./sectionsscroll";
+import Weather from "./weather";
 export default function Page() {
   const { showAccoridan, showRandomColor, showTicTac, showTreeView, showlightDarkMode }
     = useSelector((state: AppState) => { return state.showComponentsSlice })
@@ -52,6 +53,7 @@ export default function Page() {
       {/* <Resize></Resize> */}
       {/* <ScrollUpandDown></ScrollUpandDown> */}
       {/* <SectionsScroll></SectionsScroll> */}
+      <Weather></Weather>
 
 
     </div>
