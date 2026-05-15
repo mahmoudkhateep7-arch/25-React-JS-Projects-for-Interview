@@ -35,7 +35,7 @@ export default function Page() {
     = useSelector((state: AppState) => { return state.showComponentsSlice })
   return (
     <div className={`min-h-screen bg-white`}>
-      {/* <TopHeadr></TopHeadr>
+      <TopHeadr></TopHeadr>
       <Title></Title>
       {showAccoridan && <Accordian></Accordian>}
       {showRandomColor && <HexRgb></HexRgb>}
@@ -56,7 +56,7 @@ export default function Page() {
       <Resize></Resize>
       <ScrollUpandDown></ScrollUpandDown>
       <SectionsScroll></SectionsScroll>
-      <Weather></Weather> */}
+      <Weather></Weather>
       <GridShapes></GridShapes>
       <Circle></Circle>
 

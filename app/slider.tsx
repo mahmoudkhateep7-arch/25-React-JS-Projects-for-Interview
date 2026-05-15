@@ -18,9 +18,14 @@ export default function Slider() {
   const [direction, setDirection] = useState('fromRight')
   const [index, setIndex] = useState(0)
   const getImagesArray = async () => {
-    const response = await fetch('https://picsum.photos/v2/list?page=1&limit=10')
-    const data = await response.json()
-    setArrayOfImages(data)
+    try {
+      const response = await fetch('https://picsum.photos/v2/list?page=1&limit=10')
+      const data = await response.json()
+      setArrayOfImages(data)
+    } catch (error) {
+      console.log(`soem err happened`)
+
+    }
   }
   useEffect(() => {
     getImagesArray()
