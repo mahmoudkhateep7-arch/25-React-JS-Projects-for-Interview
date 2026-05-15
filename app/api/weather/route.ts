@@ -2,7 +2,7 @@ import { NextResponse, NextRequest } from "next/server";
 export interface BigObj {
   cod: number,
   main: {
-    temp: string,
+    temp: number,
     humidity: number
   },
   name: string,
@@ -31,7 +31,7 @@ const getData = async (url: string) => {
 
 
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest) {
   const { countyName }: { countyName: string } = await req.json()
   const url = makeUrlFunction(countyName)
   const data = await getData(url)
