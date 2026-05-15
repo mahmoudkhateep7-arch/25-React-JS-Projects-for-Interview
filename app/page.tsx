@@ -26,35 +26,39 @@ import Resize from "./useresize";
 import ScrollUpandDown from "./scrollupanddown";
 import SectionsScroll from "./sectionsscroll";
 import Weather from "./weather";
+import Square from "./squareandcircle";
+import Tringle from "./tringale";
+import GridShapes from "./gridshapes";
+import Circle from "./circle";
 export default function Page() {
   const { showAccoridan, showRandomColor, showTicTac, showTreeView, showlightDarkMode }
     = useSelector((state: AppState) => { return state.showComponentsSlice })
   return (
     <div className={`min-h-screen bg-white`}>
-      {/* <TopHeadr></TopHeadr> */}
-      {/* <Title></Title> */}
-      {/* {showAccoridan &&<Accordian></Accordian>} */}
-      {/* {showRandomColor &&<HexRgb></HexRgb>} */}
-      {/* <Ratings></Ratings> */}
-      {/* <Slider></Slider> */}
-      {/* <LoadMore></LoadMore> */}
-      {/* {showTreeView &&<TreeNode></TreeNode>} */}
-      {/* <QrCode /> */}
-      {/* {showlightDarkMode &&< DardLightMode></DardLightMode>} */}
-      {/* <GettingDummyData></GettingDummyData> */}
-      {/* <Tabs></Tabs> */}
-      {/* <GithubFinder></GithubFinder> */}
-      {/* <SearchFilter></SearchFilter> */}
-      {/* {showTicTac &&<TicTac></TicTac>} */}
-      {/* <FeatureFlag></FeatureFlag> */}
-      {/* <Test></Test> */}
-      {/* <Clickoutide></Clickoutide> */}
-      {/* <Test></Test> */}
-      {/* <Resize></Resize> */}
-      {/* <ScrollUpandDown></ScrollUpandDown> */}
-      {/* <SectionsScroll></SectionsScroll> */}
-      <Weather></Weather>
-
+      {/* <TopHeadr></TopHeadr>
+      <Title></Title>
+      {showAccoridan && <Accordian></Accordian>}
+      {showRandomColor && <HexRgb></HexRgb>}
+      <Ratings></Ratings>
+      <Slider></Slider>
+      <LoadMore></LoadMore>
+      {showTreeView && <TreeNode></TreeNode>}
+      <QrCode />
+      {showlightDarkMode && < DardLightMode></DardLightMode>}
+      <GettingDummyData></GettingDummyData>
+      <Tabs></Tabs>
+      <GithubFinder></GithubFinder>
+      <SearchFilter></SearchFilter>
+      {showTicTac && <TicTac></TicTac>}
+      <FeatureFlag></FeatureFlag>
+      <Test></Test>
+      <Clickoutide></Clickoutide>
+      <Resize></Resize>
+      <ScrollUpandDown></ScrollUpandDown>
+      <SectionsScroll></SectionsScroll>
+      <Weather></Weather> */}
+      <GridShapes></GridShapes>
+      <Circle></Circle>
 
     </div>
   )

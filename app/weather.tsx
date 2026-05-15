@@ -21,7 +21,6 @@ const init = {
   wind: { speed: 2 }
 }
 const helper = () => {
-  const ref = useRef<HTMLInputElement>(null)
 
   const [searchVal, setSearchVal] = useState('paris')
   const [inputVal, setValue] = useState('')
@@ -98,22 +97,18 @@ const helper = () => {
 
 
   }
-  useEffect(() => {
-    if (ref.current) {
-      ref.current.focus()
-    }
-  }, [loading])
-  return { handleSearch, ref, redBorder, inputVal, setValue, setBorder, err, loading, getCurrentDate, obj }
+
+  return { handleSearch, redBorder, inputVal, setValue, setBorder, err, loading, getCurrentDate, obj }
 }
 export default function Weather() {
 
-  const { handleSearch, ref, redBorder, inputVal, setValue, setBorder, err, loading, getCurrentDate, obj } = helper()
+  const { handleSearch, redBorder, inputVal, setValue, setBorder, err, loading, getCurrentDate, obj } = helper()
   return (
     <section className={`py-10 px-2 bg-[#827f7f] min-h-screen flex items-center justify-center`}>
       <div className={`flex border max-w-173 rounded-2xl bg-[#09d134] w-full mx-auto flex-col gap-3 h-118  p-4`}>
         <form className={`flex  justify-center rounded-4xl overflow-hidden w-full `} onSubmit={(e) => { e.preventDefault(); handleSearch() }}>
           <input
-            ref={ref}
+
             className={` ${(redBorder == 'red' && inputVal.trim().length == 0) ? 'border-4 border-red-500' : 'border border-black'} max-[500px]:flex-none max-[500px]:max-w-50 min-w-30 w-50  rounded-[32px_0_0_32px] outline-0 flex-1 text-2xl border-r-0 px-4 py-1.5`}
             type="text"
             placeholder={'Enter city name'}

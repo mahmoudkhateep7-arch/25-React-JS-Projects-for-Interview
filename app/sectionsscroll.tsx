@@ -30,7 +30,12 @@ export default function SectionsScroll() {
       {dataArray.map((obj, idx) => {
 
         return (
-          <div ref={n == idx ? divRef : null} style={{ backgroundColor: obj.bg, color: obj.col, height: obj.height }} className={`flex justify-center pt-4 text-3xl capitalize tracking-wide`}>{obj.text} {idx + 1}</div>
+          <div
+            key={idx}
+            ref={n == idx ? divRef : null}
+            style={{ backgroundColor: obj.bg, color: obj.col, height: obj.height }}
+            className={`flex justify-center pt-4 text-3xl capitalize tracking-wide`}>{obj.text}
+            {idx + 1}</div>
         )
       })}
 
