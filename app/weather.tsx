@@ -6,7 +6,7 @@ import { LoaderIcon } from "lucide-react";
 const init = {
   cod: 1000,
   main: {
-    temp: '1',
+    temp: 2,
     humidity: 2
 
   },
