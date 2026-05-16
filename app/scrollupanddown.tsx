@@ -51,15 +51,21 @@ const useHook = () => {
 
   useEffect(() => {
     const getProducts = async () => {
-      const res = await fetch('https://dummyjson.com/products');
-      const data = await res.json()
-      const arr: { title: string }[] = (data.products)
-      const newArr = arr.map((obj) => { return obj.title })
-      setTimeout(() => {
-        setLoading(3)
-        setProductsArray(newArr)
+      try {
+        const res = await fetch('https://dummyjson.com/products');
+        if (!res.ok) { return }
+        const data = await res.json()
+        const arr: { title: string }[] = (data.products)
+        const newArr = arr.map((obj) => { return obj.title })
+        setTimeout(() => {
+          setLoading(3)
+          setProductsArray(newArr)
 
-      }, 1000);
+        }, 1000);
+      } catch (error) {
+        console.log('err happened')
+
+      }
 
     }
     getProducts()

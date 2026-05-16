@@ -31,6 +31,7 @@ import Tringle from "./tringale";
 import GridShapes from "./gridshapes";
 import Circle from "./circle";
 import Animations from "./animation";
+import T1 from "./svg/t1";
 export default function Page() {
   const { showAccoridan, showRandomColor, showTicTac, showTreeView, showlightDarkMode }
     = useSelector((state: AppState) => { return state.showComponentsSlice })
@@ -55,11 +56,14 @@ export default function Page() {
       <Test></Test>
       <Clickoutide></Clickoutide>
       <Resize></Resize>
+
+      <Animations></Animations>
+
       <ScrollUpandDown></ScrollUpandDown>
       <SectionsScroll></SectionsScroll>
       <Weather></Weather>
       <GridShapes></GridShapes>
-      <Animations></Animations>
+      <T1></T1>
     </div>
   )
 }

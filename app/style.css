@@ -24,3 +24,146 @@ img {
     transform: translateX(-50%);
   }
 }
+
+#las {
+  transform: translate(-50%);
+
+
+}
+
+.rollaround {
+  animation: eyeRoll 12s ease-in-out infinite;
+
+}
+
+@keyframes eyeRoll {
+
+  0%,
+  100% {
+    /* Starting position: looking normal/centered */
+    transform: translate(0, 0);
+  }
+
+  20% {
+    /* Look drastically up and slightly left */
+    transform: translate(-20px, -20px);
+  }
+
+  40% {
+    /* Roll across the top to the right */
+    transform: translate(2px, -20px);
+  }
+
+  60% {
+    /* Move down the right side */
+    transform: translate(10px, 2px);
+  }
+
+  80% {
+    /* Return through the bottom center */
+    transform: translate(3px, 4px);
+  }
+}
+
+.leftwiskers {
+  animation: leftwiskers 2s infinite;
+  transform-origin: 50%;
+}
+
+@keyframes leftwiskers {
+
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  40% {
+    transform: rotate(5deg);
+
+  }
+}
+
+.rigtwiskers {
+  animation: rigtwiskers 2s infinite;
+  transform-origin: 50%;
+}
+
+@keyframes rigtwiskers {
+
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  70% {
+    transform: rotate(-7deg);
+
+  }
+}
+
+
+.rotatey {
+  animation: rotatey 5s infinite;
+}
+
+
+
+@keyframes rotatey {
+
+  0%,
+  100% {
+
+    transform: rotateY(0deg) rotateX(0deg);
+
+
+
+  }
+
+  40% {
+    transform: rotateY(30deg) rotateX(30deg);
+
+  }
+
+  80% {
+    transform: rotateY(-30deg) rotateX(-30deg);
+
+
+  }
+}
+
+
+.fromtop {
+  animation: fromtop 1.5s linear 1000ms forwards;
+
+  transform: translateY(-100%);
+
+
+
+
+}
+
+@keyframes fromtop {
+
+
+  100% {
+    transform: translateY(0);
+
+
+  }
+}
+
+.tobottom {
+  animation: tobottom 1.5s linear forwards;
+}
+
+@keyframes tobottom {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+
+  }
+
+}
