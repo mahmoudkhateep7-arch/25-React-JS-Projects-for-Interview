@@ -30,6 +30,7 @@ import Square from "./squareandcircle";
 import Tringle from "./tringale";
 import GridShapes from "./gridshapes";
 import Circle from "./circle";
+import Animations from "./animation";
 export default function Page() {
   const { showAccoridan, showRandomColor, showTicTac, showTreeView, showlightDarkMode }
     = useSelector((state: AppState) => { return state.showComponentsSlice })
@@ -58,8 +59,7 @@ export default function Page() {
       <SectionsScroll></SectionsScroll>
       <Weather></Weather>
       <GridShapes></GridShapes>
-      <Circle></Circle>
-
+      <Animations></Animations>
     </div>
   )
 }

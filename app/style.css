@@ -10,3 +10,17 @@
 img {
   user-select: none;
 }
+
+#move {
+  animation: movee 2s linear infinite;
+}
+
+@keyframes movee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
