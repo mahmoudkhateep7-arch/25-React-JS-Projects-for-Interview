@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { PropsWithChildren } from "react";
 import AosComponent from "./aos";
 import ReduxWrapper from "./redux";
+import './style.css'
 
 export const metadata: Metadata = {
   title: '25 random components',
@@ -14,8 +15,8 @@ export default function Rootlayout({ children }: PropsWithChildren) {
       <body>
         <AosComponent />
         <ReduxWrapper >
-        {children}
-          
+          {children}
+
         </ReduxWrapper>
 
       </body>

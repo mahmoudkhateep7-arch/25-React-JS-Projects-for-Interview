@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import './style.css'
 import TopHeadr from "./topheader";
 import Title from "./title";
 import Accordian from "./accordian";
@@ -32,12 +31,14 @@ import GridShapes from "./gridshapes";
 import Circle from "./circle";
 import Animations from "./animation";
 import T1 from "./svg/t1";
+import ButtonC from "./button";
 export default function Page() {
   const { showAccoridan, showRandomColor, showTicTac, showTreeView, showlightDarkMode }
     = useSelector((state: AppState) => { return state.showComponentsSlice })
   return (
-    <div className={`min-h-screen bg-white`}>
-      <TopHeadr></TopHeadr>
+    <div className={`min-h-screen bg-white relative`}>
+      <ButtonC></ButtonC>
+      {/* <TopHeadr></TopHeadr>
       <Title></Title>
       {showAccoridan && <Accordian></Accordian>}
       {showRandomColor && <HexRgb></HexRgb>}
@@ -57,13 +58,15 @@ export default function Page() {
       <Clickoutide></Clickoutide>
       <Resize></Resize>
 
-      <Animations></Animations>
 
       <ScrollUpandDown></ScrollUpandDown>
       <SectionsScroll></SectionsScroll>
       <Weather></Weather>
       <GridShapes></GridShapes>
-      <T1></T1>
+      <T1></T1> */}
+
+      <Animations></Animations>
+
     </div>
   )
 }

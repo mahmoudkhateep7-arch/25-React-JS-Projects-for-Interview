@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'cdn.dummyjson.com' },
       { protocol: 'https', hostname: 'avatars.githubusercontent.com' },
       { protocol: 'https', hostname: 'annerabbitte.ie' },
+      { protocol: 'http', hostname: 'forkify-api.herokuapp.com' },
+      { protocol: 'https', hostname: 'forkify-api.herokuapp.com' },
+
+
 
 
 
