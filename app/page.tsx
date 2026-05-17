@@ -38,7 +38,7 @@ export default function Page() {
   return (
     <div className={`min-h-screen bg-white relative`}>
       <ButtonC></ButtonC>
-      {/* <TopHeadr></TopHeadr>
+      <TopHeadr></TopHeadr>
       <Title></Title>
       {showAccoridan && <Accordian></Accordian>}
       {showRandomColor && <HexRgb></HexRgb>}
@@ -63,7 +63,7 @@ export default function Page() {
       <SectionsScroll></SectionsScroll>
       <Weather></Weather>
       <GridShapes></GridShapes>
-      <T1></T1> */}
+      <T1></T1>
 
       <Animations></Animations>
 
